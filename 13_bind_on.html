@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        //   Without Bind
+        // $("p")
+        //   .mouseenter(function() {
+        //     $(this).addClass("highlight");
+        //   })
+        //   .mouseleave(function() {
+        //     $(this).removeClass("highlight");
+        //   });
+
+        // Bind 1st kind
+        // $("p")
+        //   .bind("mouseenter", function() {
+        //     $(this).addClass("highlight");
+        //   })
+        //   .bind("mouseleave", function() {
+        //     $(this).removeClass("highlight");
+        //   });
+
+        // Bind 2nd kind
+        // $("p").bind("mouseenter mouseleave", function() {
+        //   $(this).toggleClass("highlight");
+        // });
+
+        // By $(document).on('event', 'selector', 'fire function');
+        $(document).on("mouseenter mouseleave", "p", function() {
+          $(this).toggleClass("highlight");
+        });
+      });
+    </script>
+    <title>jQuery</title>
+  </head>
+  <body>
+    <p>Ann Hathaway</p>
+  </body>
+</html>

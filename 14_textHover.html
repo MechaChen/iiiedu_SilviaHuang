@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $(".textHover")
+          .mousemove(function(e) {
+            var showHint = $(this).attr("hovertext");
+            $("#theDiv")
+              .text(showHint)
+              .show()
+              .css({
+                top: e.pageY + 10,
+                left: e.pageX + 10
+              });
+          })
+          .mouseout(function() {
+            $("#theDiv").hide();
+          });
+      });
+    </script>
+    <title>jQuery</title>
+  </head>
+  <body>
+    <p>
+      <a
+        href="http://www.google.com.tw"
+        class="textHover"
+        hovertext="Google, a powerful search engine."
+        >Google</a
+      >
+      |
+      <a
+        href="http://www.cafepress.com/"
+        class="textHover"
+        hovertext="Cafepress is the world's best online gift shop."
+        >cafepress</a
+      >
+      |
+      <a
+        href="http://www.bbc.com/news"
+        class="textHover"
+        hovertext="BBC Trust publishes response to public consultation."
+        >BBC</a
+      >
+    </p>
+    <p>
+      <img
+        src="../images/limes.jpg"
+        class="textHover"
+        hovertext="Very fresh limes..."
+      />
+    </p>
+    <div id="theDiv">Google, a powerful search engine.</div>
+  </body>
+</html>

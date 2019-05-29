@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        //   query Width & Height by CSS
+        // const cssWidth = $("img").css("width");
+        // const cssHeight = $("img").css("height");
+        // $("#feedback").append(
+        //   `Width : ${cssWidth} | Height : ${cssHeight}<br>`
+        // );
+        // query Width & Height by HTML
+        // const htmlWidth = $("img").attr("width");
+        // const htmlHeight = $("img").attr("height");
+        // $("#feedback").append(
+        //   `Width : ${htmlWidth} | Height : ${htmlHeight}<br>`
+        // );
+        //   query Width & Height by jQuery
+        const jqueryWidth = $("img").width();
+        const jqueryHeight = $("img").height();
+        // $("#feedback").append(
+        //   `Width : ${jqueryWidth} | Height : ${jqueryHeight}<br>`
+        // );
+
+        const windowWidth = $(window).width();
+        const windowHeight = $(window).height();
+        $("img").css({
+          width: windowWidth,
+          height: windowHeight,
+          verticalAlign: "middle"
+        });
+      });
+    </script>
+    <title>jQuery</title>
+  </head>
+  <body>
+    <img src="../images/washDrawing/037.JPG" />
+    <p id="feedback"></p>
+  </body>
+</html>

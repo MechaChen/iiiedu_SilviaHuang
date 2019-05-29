@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <style>
+      body {
+        padding: 30px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+
+      table {
+        margin: 20px 0;
+      }
+
+      h3 {
+        padding: 15px 0 5px;
+        font-size: 24px;
+        color: #333;
+      }
+
+      .food {
+        outline: none;
+        display: inline-block;
+        /* overflow: hidden; */
+        padding: 5px 10px;
+        border: 1px solid #333;
+        font-size: 14px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: #333;
+        cursor: pointer;
+        position: relative;
+        transition: 0.5s;
+      }
+
+      .food:hover {
+        color: #fff;
+      }
+
+      .food.added {
+        color: #fff;
+      }
+
+      .food::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 0;
+        height: 100%;
+        /* for <button> won't work, only work for <a> */
+        z-index: -1;
+        transition: 0.5s;
+      }
+
+      .food:hover::before {
+        width: 100%;
+        background-color: #444;
+      }
+
+      .food.added::before {
+        width: 100%;
+        background-color: #444;
+      }
+
+      hr {
+        display: block;
+        margin: 20px 0;
+      }
+
+      ol {
+        list-style-position: inside;
+      }
+
+      td {
+        text-align: center;
+      }
+
+      select {
+        border-radius: 0;
+        border: 1px solid #333;
+        background-color: #fff;
+        appearance: none;
+        text-align: center;
+        font-size: 14px;
+      }
+    </style>
+    <script>
+      $(document).ready(() => {
+        $(".food").click(function() {
+          const item = $(this).text();
+          $(this).toggleClass("added");
+          $("ol").append(`<li>${item}</li>`);
+          $("table")
+            .attr("border", 1)
+            .append(`<tr><td>${item}</td></tr>`);
+          $("select").append(`<option>${item}</option>`);
+        });
+      });
+    </script>
+    <title>jQuery</title>
+  </head>
+  <body>
+    <h3>Condiments (調味料類)</h3>
+    <p>
+      <a class="food">mustard</a>
+      <a class="food">salt</a>
+      <a class="food">pepper</a>
+      <a class="food">spices</a>
+      <a class="food">soy sauce</a>
+      <a class="food">ketchup</a>
+    </p>
+    <h3>Deli (熟食類)</h3>
+    <p>
+      <a class="food">roast beef</a>
+      <a class="food">turkey</a>
+      <a class="food">Swiss cheese</a>
+      <a class="food">potato salad</a>
+      <a class="food">potato Diane</a>
+    </p>
+    <h3>Coffee and Tea (咖啡茶飲類)</h3>
+    <p>
+      <a class="food">coffee</a>
+      <a class="food">herbal tea</a>
+      <a class="food">hot chocolate</a>
+      <a class="food">latte</a>
+      <a class="food">cafe au lait</a>
+      <a class="food">Con Panna</a>
+    </p>
+    <h3>Bread (麵包類)</h3>
+    <p>
+      <a class="food">white bread</a>
+      <a class="food">wheat bread</a>
+      <a class="food">whole grain bread</a>
+      <a class="food">rye bread</a>
+      <a class="food">pretzel</a>
+      <a class="food">pita bread</a>
+    </p>
+    <hr />
+    <h2>Your choices :</h2>
+    <ol></ol>
+    <table></table>
+    <select></select>
+  </body>
+</html>

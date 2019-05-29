@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#topMessage").slideDown(2000);
+        $("#hideMessage").click(() => $("#topMessage").slideUp(500));
+      });
+    </script>
+    <title>jQuery</title>
+  </head>
+  <body>
+    <div id="topMessage">
+      We see you're not logged in. Do you want to
+      <a href="javascript:;">Sign up?</a>
+      <a href="javascript:;" id="hideMessage">No thanks.</a>
+    </div>
+  </body>
+</html>

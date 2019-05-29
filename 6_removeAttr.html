@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="" />
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $(":file").change(function() {
+          $(":submit").removeAttr("disabled");
+        });
+      });
+    </script>
+    <title>jQuery</title>
+  </head>
+  <body>
+    <form action="#" method="post" enctype="multipart/form-data">
+      <input type="file" id="theFile" />
+      <input type="submit" value="Upload" disabled />
+    </form>
+  </body>
+</html>

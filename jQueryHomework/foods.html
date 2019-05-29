@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="foods.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="btn-group">
+      <h3>Condiments(調味料類)</h3>
+      <a href="javascript:;" class="food">mustard</a>
+      <a href="javascript:;" class="food">salt</a>
+      <a href="javascript:;" class="food">pepper</a>
+      <a href="javascript:;" class="food">spices</a>
+      <a href="javascript:;" class="food">soy sauce</a>
+      <a href="javascript:;" class="food">olive oil</a>
+      <a href="javascript:;" class="food">ketchup</a>
+      <a href="javascript:;" class="food">cooking oil</a>
+      <a href="javascript:;" class="food">sugar</a>
+    </div>
+    <div class="btn-group">
+      <h3>Deli(熟食類)</h3>
+      <a href="javascript:;" class="food">roast beef</a>
+      <a href="javascript:;" class="food">turkey</a>
+      <a href="javascript:;" class="food">Swiss cheese</a>
+      <a href="javascript:;" class="food">potato salad</a>
+      <a href="javascript:;" class="food">potato Diane</a>
+    </div>
+    <div class="btn-group">
+      <h3>Coffee and Tea(咖啡茶飲類)</h3>
+      <a href="javascript:;" class="food">coffee</a>
+      <a href="javascript:;" class="food">herbal tea</a>
+      <a href="javascript:;" class="food">hot chocolate</a>
+      <a href="javascript:;" class="food">cafe au lait</a>
+      <a href="javascript:;" class="food">latte</a>
+      <a href="javascript:;" class="food">Con Panna</a>
+      <a href="javascript:;" class="food">Viennese coffee</a>
+    </div>
+    <div class="btn-group">
+      <h3>Bread(麵包類)</h3>
+      <a href="javascript:;" class="food">white bread</a>
+      <a href="javascript:;" class="food">wheat bread</a>
+      <a href="javascript:;" class="food">whole grain bread</a>
+      <a href="javascript:;" class="food">rye bread</a>
+      <a href="javascript:;" class="food">pretzel</a>
+      <a href="javascript:;" class="food">pita bread</a>
+      <a href="javascript:;" class="food">french bread</a>
+      <a href="javascript:;" class="food">bagel</a>
+      <a href="javascript:;" class="food">rolls</a>
+      <a href="javascript:;" class="food">donut</a>
+      <a href="javascript:;" class="food">bread sticks</a>
+      <a href="javascript:;" class="food">swiss rolls</a>
+      <a href="javascript:;" class="food">croissant</a>
+    </div>
+    <table>
+      <tbody>
+        <tr id="condiments">
+          <th scope="col">Coffee</th>
+        </tr>
+        <tr id="deli">
+          <th scope="col">Deli</th>
+        </tr>
+        <tr id="coffee_and_tee">
+          <th scope="col">Condiments</th>
+        </tr>
+        <tr id="bread">
+          <th scope="col">Bread</th>
+        </tr>
+      </tbody>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+      $(document).ready(() => {
+        const condiments = [
+          "mustard",
+          "salt",
+          "pepper",
+          "spices",
+          "soy sauce",
+          "olive oil",
+          "ketchup",
+          "cooking oil",
+          "sugar"
+        ];
+        const deli = [
+          "roast beef",
+          "turkey",
+          "Swiss cheese",
+          "potato salad",
+          "potato Diane"
+        ];
+        const coffeeAndTee = [
+          "coffee",
+          "herbal tea",
+          "cafe au lait",
+          "latte",
+          "Con Panna",
+          "Con Panna",
+          "Viennese coffee"
+        ];
+        const bread = [
+          "white bread",
+          "wheat bread",
+          "whole grain bread",
+          "rye bread",
+          "pretzel",
+          "pita bread",
+          "french bread",
+          "bagel",
+          "rolls",
+          "donut",
+          "bread sticks",
+          "swiss rolls",
+          "croissant"
+        ];
+
+        $("a").click(function() {
+          const item = $(this).text();
+          if (condiments.indexOf(item)) {
+            $("#condiments").append(`<td >${item}</td>`);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

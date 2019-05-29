@@ -1,0 +1,53 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+/*7_addClass.html + 8_removeClass.html + 13_bind_on.html*/
+.highlight {
+  background: yellow;
+}
+
+/*14_textHover.html*/
+.textHover {
+  cursor: pointer;
+}
+#theDiv {
+  border: 1px solid #ccc;
+  color: #888;
+  padding: 5px;
+  background: #fff;
+
+  position: absolute;
+  display: none;
+}
+/*15_topMessage.html*/
+#topMessage {
+  background: #faa;
+  color: #fff;
+  font: 20px Tahoma;
+  width: 600px;
+  text-align: center;
+  padding: 10px 0px;
+  margin: 0px auto;
+  display: none;
+}
+
+/* 17_animation.html */
+#imgBoard {
+  width: 100px;
+  background-color: #ccc;
+  padding: 5px 30px;
+  position: relative;
+  left: -130px;
+}
+
+#imgBoard img {
+  width: 100%;
+}
+
+#inCenter {
+  width: 200px;
+  height: 200px;
+  background-color: #ccc;
+  position: relative;
+}

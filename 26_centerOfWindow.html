@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <style>
+      /* #inCenter {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      } */
+    </style>
+    <script>
+      $(document).ready(function() {
+        centered();
+        $(window).resize(centered);
+
+        function centered() {
+          const divWidth = $("#inCenter").width();
+          const divHeight = $("#inCenter").height();
+          const windowWidth = $(window).width();
+          const windowHeight = $(window).height();
+          $("#inCenter").css({
+            left: (windowWidth - divWidth) / 2,
+            top: (windowHeight - divHeight) / 2
+          });
+        }
+      });
+    </script>
+    <title>jQuery</title>
+  </head>
+  <body>
+    <div id="inCenter"></div>
+  </body>
+</html>
