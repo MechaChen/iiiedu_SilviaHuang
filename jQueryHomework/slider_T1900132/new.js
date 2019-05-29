@@ -10,6 +10,7 @@ $(document).ready(function() {
   $("#content li").width(divWidth);
   $("#content").width(divWidth * imgCount);
 
+  // Resizing 功能
   $(window).resize(() => {
     divWidth = $("#sliderBoard").width();
     imgCount = $(".image").length;
