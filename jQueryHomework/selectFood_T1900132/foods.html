@@ -54,7 +54,7 @@
       <a href="javascript:;" class="food">swiss rolls</a>
       <a href="javascript:;" class="food">croissant</a>
     </div>
-    <table>
+    <table border="1">
       <tbody>
         <tr id="condiments">
           <th scope="col">Coffee</th>
@@ -118,8 +118,14 @@
 
         $("a").click(function() {
           const item = $(this).text();
-          if (condiments.indexOf(item)) {
-            $("#condiments").append(`<td >${item}</td>`);
+          if (condiments.indexOf(item) != -1) {
+            $("#condiments").append(`<td>${item}</td>`);
+          } else if (deli.indexOf(item) != -1) {
+            $("#deli").append(`<td>${item}</td>`);
+          } else if (coffeeAndTee.indexOf(item) != -1) {
+            $("#coffee_and_tee").append(`<td>${item}</td>`);
+          } else if (bread.indexOf(item) != -1) {
+            $("#bread").append(`<td>${item}</td>`);
           }
         });
       });
