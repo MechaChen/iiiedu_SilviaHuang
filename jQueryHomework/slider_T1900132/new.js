@@ -16,6 +16,9 @@ $(document).ready(function() {
     imgCount = $(".image").length;
     $("#content li").width(divWidth);
     $("#content").width(divWidth * imgCount);
+    $("#content").css({
+      left: divWidth * (index % imgCount) * -1
+    });
   });
 
   index = 0;
