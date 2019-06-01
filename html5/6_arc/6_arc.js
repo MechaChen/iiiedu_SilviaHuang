@@ -46,22 +46,22 @@ function init() {
   // context.stroke();
 
   let squid_1 = new Image();
-  squid_1.src = "../images/squid_1.png";
+  squid_1.src = "../../images/squid_1.png";
   squid_1.addEventListener("load", function() {
     context.drawImage(squid_1, 0, 0, canvas.width / 2, canvas.height / 2);
   });
   let squid_2 = new Image();
-  squid_2.src = "../images/squid_2.png";
+  squid_2.src = "../../images/squid_2.png";
   squid_2.addEventListener("load", function() {
     context.drawImage(squid_2, 0, 400, canvas.width / 2, canvas.height / 2);
   });
   let squid_3 = new Image();
-  squid_3.src = "../images/squid_3.png";
+  squid_3.src = "../../images/squid_3.png";
   squid_3.addEventListener("load", function() {
     context.drawImage(squid_3, 500, 0, canvas.width / 2, canvas.height / 2);
   });
   let squid_4 = new Image();
-  squid_4.src = "../images/squid_4.png";
+  squid_4.src = "../../images/squid_4.png";
   squid_4.addEventListener("load", function() {
     context.drawImage(squid_4, 500, 400, canvas.width / 2, canvas.height / 2);
   });
