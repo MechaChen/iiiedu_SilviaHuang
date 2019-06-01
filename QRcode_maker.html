@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      section {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .input-field {
+        padding-bottom: 20px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <section>
+      <div class="input-field">
+        <label for="source">URL : </label>
+        <input type="text" id="source" />
+        <button>Generate Your QRcode</button>
+      </div>
+      <div id="result"></div>
+    </section>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery-qrcode.min.js"></script>
+    <script>
+      $(document).ready(() => {
+        $("button").click(function() {
+          const source = $("#source").val();
+          $("#result").text("");
+          $("#result").qrcode({
+            text: source,
+            mode: 2,
+            label: source
+          });
+        });
+        $("input").keyup(function(e) {
+          if (e.keyCode == 13) {
+            const source = $("#source").val();
+            $("#result").text("");
+            $("#result").qrcode({
+              text: source,
+              mode: 2,
+              label: source
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
