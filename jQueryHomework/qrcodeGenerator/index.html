@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        padding: 30px;
+        font-size: 24px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      /* input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="url"],
+      input[type="search"] {
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        border-radius: 0;
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+      } */
+      label {
+        display: inline-block;
+        padding: 0 20px 0 0;
+      }
+      input {
+        outline: none;
+        appearance: none;
+        display: inline-block;
+        height: 30px;
+        padding: 0 5px;
+      }
+      input[type="text"] {
+        width: 200px;
+        border: 1px solid #333;
+        box-sizing: border-box;
+      }
+    </style>
+    <title>Index</title>
+  </head>
+  <body>
+    <form action="result.php" method="get">
+      <label for="source">Source</label
+      ><input id="source" type="text" name="source" />
+      <button>Submit</button>
+    </form>
+  </body>
+</html>

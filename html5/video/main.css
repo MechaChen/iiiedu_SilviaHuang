@@ -1,0 +1,46 @@
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#skin {
+  border: 3px dashed steelblue;
+  width: 700px;
+  margin: auto;
+  padding: 15px 0;
+  border-radius: 10px;
+  text-align: center;
+}
+
+section {
+  padding: 10px 0;
+}
+
+#buttons {
+  float: left;
+  width: 120px;
+}
+
+button {
+  width: 50px;
+  height: 20px;
+  text-transform: uppercase;
+  font-size: 12px;
+  text-align: center;
+}
+
+#defaultBar {
+  float: left;
+  width: 560px;
+  height: 20px;
+  border: 1px solid #aaa;
+  box-sizing: border-box;
+}
+
+#progressBar {
+  background-color: #aaa;
+  margin: 4px;
+  height: 12px;
+  width: 0;
+}
