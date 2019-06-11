@@ -1,0 +1,11 @@
+#dropZone {
+  border: 1px dashed #666;
+  width: 500px;
+  margin: 50px auto;
+  padding: 40px 10px;
+}
+
+img {
+  max-width: 400px;
+  max-height: 300px;
+}

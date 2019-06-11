@@ -1,8 +1,8 @@
 function init() {
-  document.getElementById("theFile").onchange = readFile;
+  document.getElementById("theFile").onchange = fileChange;
 }
 
-function readFile() {
+function fileChange() {
   const file = document.getElementById("theFile").files[0];
   console.log(file.name);
   let message = "";
@@ -14,5 +14,11 @@ function readFile() {
 
   document.getElementById("fileInfo").value = message;
 }
+
+const character = {
+  name: "Bear",
+  sex: "man",
+  age: 17
+};
 
 window.onload = init;
