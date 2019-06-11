@@ -14,9 +14,6 @@ function doFirst() {
 }
 
 function addItem(id, info) {
-  const newItem = document.getElementById("newItem");
-  newItem.innerHTML = "";
-
   //   info.split('|') = ['Formosa', 'formosa.jpg', '5000'];
   let image = document.createElement("img");
   image.src = `imgs/${info.split("|")[1]}`;
@@ -25,6 +22,11 @@ function addItem(id, info) {
   let price = document.createElement("span");
   price.innerText = info.split("|")[2];
 
+  const newItem = document.getElementById("newItem");
+  // newItem.innerHTML = "";
+  while (newItem.childNodes.length >= 1) {
+    newItem.removeChild(newItem.firstChild);
+  }
   newItem.appendChild(image);
   newItem.appendChild(title);
   newItem.appendChild(price);
