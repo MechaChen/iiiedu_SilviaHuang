@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>SVG</title>
+</head>
+<body>
+	<svg width="1000" height="900" style="border:1px solid #ccc;">
+		<defs>
+			<radialGradient id="pinkBlue" cx="20%" cy="30%" r="80%" fx="50%" fy="50%">
+				<stop offset="0%"  stop-color="pink" />
+				<stop offset="100%"  stop-color="blue" />
+			</radialGradient>
+		</defs>
+				
+		<ellipse cx="300" cy="300" rx="250" ry="150" style="fill:url(#pinkBlue);" />
+	</svg>
+</body>
+</html>
+	
+	

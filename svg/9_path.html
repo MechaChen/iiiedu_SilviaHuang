@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>SVG</title>
+</head>
+<body>
+	<svg width="1000" height="800" style="border:1px solid #ccc;">
+		<!-- <path d="M200 200L300 100L400 300L200 80Z" style="stroke:red;fill:none;" /> -->
+		<!-- <path d="M200,200 L300,100 L400,300 L200,80 Z" style="stroke:red;fill:none;" /> -->
+
+		<!-- <path d="M200 200V400" style="stroke-width:5px;stroke:red;fill:none;" /> -->
+
+		<!-- bezierCurveTo		 -->
+		<!-- <path d="M300 300C350,150,500,500,550,400" style="stroke-width:5px;stroke:red;fill:none;" />		 -->
+		<!-- <path d="M300 300L350,150L500,500L550,400" style="stroke-width:1px;stroke:blue;fill:none;" /> -->
+
+		<!-- quadraticCurveTo -->
+		<!-- <path d="M300 300Q400,150,550,400" style="stroke-width:5px;stroke:red;fill:none;" />
+		<path d="M300 300L400,150L550,400" style="stroke-width:1px;stroke:blue;fill:none;" /> -->
+
+		<!-- quadraticCurveTo + smooth quadraticCurveTo-->
+		<!-- <path d="M200 200 Q250 250 300 200 T400 200" style="stroke:red;stroke-width:5px;fill:none;"/> -->
+
+		<!-- 加上transform -->
+			<path d="M200 200 Q250 250 300 200 T400 200" 
+				  transform="rotate(30)" 
+				  style="stroke:red;stroke-width:5px;fill:none;"/>
+
+		<!-- bezierCurveTo + smooth bezierCurveTo -->
+		<!-- <path d="M200,200C240,240 260,240 300,200S350,150 400,200" style="stroke-width:5px;stroke:red;fill:none;" />		 -->
+
+		<!-- elliptical Arc -->
+		/*<path d="M0 0A150 80,10 1 1,200 300" style="stroke-width:5px;stroke:red;fill:none;" />*/
+	</svg>
+</body>
+</html>

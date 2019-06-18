@@ -1,0 +1,5 @@
+<svg>
+    <text x="0" y="50" style="font: Tahoma 30px;" stroke="#000" fill="none">
+    This is 5px SVG text.
+    </text>
+</svg>
