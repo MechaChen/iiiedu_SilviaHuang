@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>13_lifeCycle</title>
+    <style></style>
+  </head>
+  <body>
+    <div id="app">
+      <h3>{{ count }}</h3>
+      <button @click="update">Update</button>
+      <button id="deleteButton">Delete</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script>
+      // 掛載1
+      let vm = new Vue({
+        el: "#app",
+        data: {
+          count: 0
+        },
+        methods: {
+          update() {
+            this.count++;
+          }
+        },
+        beforeCreate() {
+          console.log(`beforeCreate : ${this.count}`);
+          console.log(`beforeCreate--el : ${this.$el}`);
+        },
+        created() {
+          console.log(`created : ${this.count}`);
+          console.log(`created--el : ${this.$el}`);
+        },
+        beforeMount() {
+          console.log(`beforeMount : ${this.count}`);
+          console.log(`beforeMount--el : ${this.$el}`);
+        },
+        mounted() {
+          console.log(`mounted : ${this.count}`);
+          console.log(`mounted--el : ${this.$el}`);
+        },
+        beforeUpdate() {
+          console.log(`beforeUpdate : ${this.count}`);
+        },
+        updated() {
+          console.log(`updated : ${this.count}`);
+        },
+        beforeDestroy() {
+          console.log(`beforeDestroy: ${this.count}`);
+        },
+        destroyed() {
+          console.log(`destroy: ${this.count}`);
+        }
+      });
+
+      document.getElementById("deleteButton").onclick = function() {
+        vm.$destroy();
+      };
+
+      // 掛載2
+      // let vm = new Vue({
+      //   data: {
+      //     count: 0
+      //   },
+      //   methods: {
+      //     update() {
+      //       this.count++;
+      //     }
+      //   }
+      // });
+
+      // vm.$mount("#app");
+    </script>
+  </body>
+</html>

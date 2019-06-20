@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>9_computed</title>
+    <style>
+      * {
+        list-style: none;
+      }
+      ul {
+        padding-left: 0;
+      }
+      body {
+        margin: 0 100px;
+        font: 20px Tahoma;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" v-model="TWD" />
+      <ul>
+        <li>日幣：(JPY){{ Japan }}</li>
+        <li>美幣：(USD){{ USdollar }}</li>
+        <li>港幣：(HKD){{ HKdollar }}</li>
+        <li>歐元：(EUR){{ EURdollar }}</li>
+      </ul>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          message: "Hello, Vue!",
+          TWD: 0
+        },
+        computed: {
+          Japan() {
+            return this.TWD / 0.2798;
+          },
+          USdollar() {
+            return Math.round((this.TWD / 30.705) * 100) / 100;
+          },
+          HKdollar() {
+            return this.TWD / 3.814;
+          },
+          EURdollar() {
+            return this.TWD / 34.24;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

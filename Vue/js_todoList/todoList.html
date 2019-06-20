@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #ccc;
+      }
+      form {
+        width: 500px;
+        margin: 50px 200px;
+        background-color: #fff;
+      }
+      div {
+        padding: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="theForm">
+      <fieldset>
+        <legend>Enter an item to be done.</legend>
+        <div><label for="">Item</label><input type="text" id="task" /></div>
+        <div>
+          <input type="submit" value="Add!" />
+        </div>
+        <div id="output"></div>
+      </fieldset>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script src="new.js"></script>
+  </body>
+</html>

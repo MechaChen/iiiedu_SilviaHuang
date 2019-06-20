@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <img v-bind:src="imgURL" alt="capoo" />
+      <img :src="imgURL" alt="capoo" />
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          message: "Hello, Vue!",
+          imgURL:
+            "https://tinythief.shidaipinpai.com/?u=aHR0cHM6Ly93eDMuc2luYWltZy5jbi9sYXJnZS8wMDdqMGpJYWd5MWZ4ZXgyeGNoemZqMzBlODBlOGFhbi5qcGc"
+        }
+      });
+    </script>
+  </body>
+</html>

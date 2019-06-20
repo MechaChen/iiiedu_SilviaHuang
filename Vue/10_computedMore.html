@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>10_computedMore</title>
+    <style>
+      * {
+        list-style: none;
+      }
+      ul {
+        padding-left: 0;
+      }
+      body {
+        margin: 0 100px;
+        font: 20px Tahoma;
+      }
+      #app {
+        width: 25%;
+        margin: auto;
+      }
+      .input-field {
+        padding: 3% 0;
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{ now }}</p>
+      <div class="input-field">
+        <label for="">Your Weight : </label
+        ><input type="text" v-model="weight" />
+      </div>
+      <div class="input-field">
+        <label for="">Your Height :</label
+        ><input type="text" v-model="height" />
+      </div>
+      <div class="input-field">
+        <label for="">Your BMI is :</label
+        ><span v-if="calculate != 'NaN'">{{ calculate }}</span>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          height: 0,
+          weight: 0
+        },
+        computed: {
+          calculate() {
+            BMI = this.weight / Math.pow(this.height / 100, 2);
+            return BMI.toFixed(2);
+          },
+          now() {
+            let total = this.weight + this.height;
+            return new Date();
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

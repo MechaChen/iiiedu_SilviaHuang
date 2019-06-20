@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>8_todoList</title>
+    <style>
+      body {
+        font: 20px Tahoma;
+      }
+      h3 {
+        margin: 10px 0;
+      }
+      ol {
+        padding-left: 0;
+      }
+      li {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 0;
+      }
+      fieldset {
+        width: 250px;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <fieldset>
+        <legend>Enter an item do be done.</legend>
+        <h3 v-if="tasks.length == 0"></h3>
+        <h3 v-else>TodoList</h3>
+        <input type="text" @keyup.13="addTask(output)" v-model="output" />
+        <ol>
+          <li v-for="task in tasks">
+            <span>{{ tasks.indexOf(task) + 1 }}. {{ task }}</span>
+            <button @click="removeTask(task)">Delete</button>
+          </li>
+        </ol>
+      </fieldset>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          tasks: [],
+          output: ""
+        },
+        methods: {
+          addTask(item) {
+            this.tasks.push(item);
+            this.output = "";
+          },
+          removeTask(item) {
+            this.tasks.splice(this.tasks.indexOf(item), 1);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
