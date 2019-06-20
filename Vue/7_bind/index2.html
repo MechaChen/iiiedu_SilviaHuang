@@ -4,24 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>2_show</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <title>7_bind</title>
   </head>
   <body>
-    <!-- <div id="app" vue-text></div> -->
     <div id="app">
-      <h1>
-        {{ message }}
-      </h1>
-      <p v-show="show">Loading</p>
+      <h2>{{ message }}</h2>
+      <img v-bind:src="imgURL" alt="vue" />
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
     <script>
       new Vue({
         el: "#app",
         data: {
-          message: "Hello, Vue!",
-          score: 80,
-          show: false
+          message: "Hello, Vue",
+          imgURL:
+            "https://embedwistia-a.akamaihd.net/deliveries/2132105fc1db02f794610c4ab3cce7010f911ff1.jpg?origin_v2=1&image_crop_resized=1280x800"
         }
       });
     </script>

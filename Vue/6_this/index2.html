@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h2>{{ message }}</h2>
+      <table border="1">
+        <tr>
+          <td v-for="item in classmate">{{ item.name }}</td>
+        </tr>
+        <tr>
+          <td v-for="item in classmate">{{ item.age }}</td>
+        </tr>
+      </table>
+
+      <ul>
+        <li v-for="item in classmate" @click="DD101(item.name)">
+          {{ item.name }}
+        </li>
+      </ul>
+    </div>
+    <script>
+      function test() {
+        alert(this);
+      }
+      test();
+
+      alert(this);
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          message: "Hello, Vue",
+          classmate: [
+            { name: "Anan", age: 14 },
+            { name: "Steve", age: 18 },
+            { name: "Nina", age: 15 }
+          ]
+        },
+        methods: {
+          DD101: function(member) {
+            alert(`DD101 member : ${member}`);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

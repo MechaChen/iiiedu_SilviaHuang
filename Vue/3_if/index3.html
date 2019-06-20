@@ -4,24 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>2_show</title>
+    <title>Document</title>
   </head>
   <body>
-    <!-- <div id="app" vue-text></div> -->
     <div id="app">
-      <h1>
-        {{ message }}
-      </h1>
-      <p v-show="show">Loading</p>
+      <h2>Enter Your Score</h2>
+      <input type="text" v-model="score" />
+      <p v-if="score > 100">Error</p>
+      <p v-else-if="score >= 80">You are awesome</p>
+      <p v-else-if="score >= 60">You haved passed</p>
+      <p v-else-if="score >= 0">You failed.</p>
+      <p v-else>Error</p>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
     <script>
       new Vue({
         el: "#app",
         data: {
-          message: "Hello, Vue!",
-          score: 80,
-          show: false
+          message: "Hello, Vue",
+          score: 0
         }
       });
     </script>

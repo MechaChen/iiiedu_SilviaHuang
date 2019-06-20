@@ -7,14 +7,14 @@
     <title>Document</title>
   </head>
   <body>
-    <!-- <div id="app" vue-text></div> -->
     <div id="app">
+      <h3>{{ message }}</h3>
       <table border="1">
         <tr>
-          <td v-for="item in classmate">{{ item.name }}</td>
+          <td v-for="classmate in classmates">{{ classmate.name }}</td>
         </tr>
         <tr>
-          <td v-for="item in classmate">{{ item.age }}</td>
+          <td v-for="classmate in classmates">{{ classmate.age }}</td>
         </tr>
       </table>
     </div>
@@ -23,7 +23,7 @@
       new Vue({
         el: "#app",
         data: {
-          message: "Hello, Vue!",
+          message: "Hello, Vue",
           colors: [
             "red",
             "orange",
@@ -33,8 +33,8 @@
             "indigo",
             "purple"
           ],
-          classmate: [
-            { name: "Anan", age: 14 },
+          classmates: [
+            { name: "Anna", age: 14 },
             { name: "Steve", age: 18 },
             { name: "Nina", age: 15 }
           ]
