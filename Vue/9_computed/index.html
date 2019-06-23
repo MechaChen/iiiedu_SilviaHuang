@@ -38,16 +38,16 @@
         },
         computed: {
           Japan() {
-            return this.TWD / 0.2798;
+            return (this.TWD / 0.2798).toFixed(2);
           },
           USdollar() {
             return Math.round((this.TWD / 30.705) * 100) / 100;
           },
           HKdollar() {
-            return this.TWD / 3.814;
+            return (this.TWD / 3.814).toFixed(2);
           },
           EURdollar() {
-            return this.TWD / 34.24;
+            return (this.TWD / 34.24).toFixed(2);
           }
         }
       });

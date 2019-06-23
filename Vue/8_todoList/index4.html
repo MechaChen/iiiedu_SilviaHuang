@@ -30,8 +30,6 @@
     <div id="app">
       <fieldset>
         <legend>Enter an item to be done.</legend>
-        <h3 v-if="tasks.length == 0"></h3>
-        <h3 v-else>TodoList</h3>
         <input type="text" v-model="output" @keyup.13="addTask(output)" />
         <ol>
           <li v-for="task in tasks">
