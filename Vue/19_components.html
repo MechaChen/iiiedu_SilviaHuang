@@ -1,69 +1,67 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title>Vue</title>
-	<style>
-		#app{
-			border: 1px solid red;
-			width: 80%;
-			height: 600px;
-			margin: 50px auto;
-			font: bold 30px Tahoma;
-		}
-		.header{
-			border: 1px solid red;
-			width: 100%;
-			height: 100px;
-			background: #ccc;
-			text-align: center;
-			line-height: 100px;
-		}
-		.section{
-			border: 1px solid red;
-			width: 70%;
-			height: 100%;
-			float: left;
-			background: lightblue;
-			text-align: center;
-		}
-		.aside{
-			border: 1px solid red;
-			width: 20%;
-			height: 100%;
-			float: left;
-		}
-		.block{
-			border: 1px solid red;
-			width: 100px;
-			height: 100px;
-			background: steelblue;
-			margin: 10px;
-			float: left;
-			font-size: 20px;
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue</title>
+    <style>
+      #app {
+        border: 1px solid red;
+        width: 80%;
+        height: 600px;
+        margin: 50px auto;
+        font: bold 30px Tahoma;
+      }
+      .header {
+        border: 1px solid red;
+        width: 100%;
+        height: 100px;
+        background: #ccc;
+        text-align: center;
+        line-height: 100px;
+      }
+      .section {
+        border: 1px solid red;
+        width: 70%;
+        height: 100%;
+        float: left;
+        background: lightblue;
+        text-align: center;
+      }
+      .aside {
+        border: 1px solid red;
+        width: 20%;
+        height: 100%;
+        float: left;
+      }
+      .block {
+        border: 1px solid red;
+        width: 100px;
+        height: 100px;
+        background: steelblue;
+        margin: 10px;
+        float: left;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <my-header></my-header>
+      <my-section></my-section>
+      <my-aside></my-aside>
+    </div>
 
-		}
-	</style>
-</head>
-<body>	
-	<div id="app">
-		<my-header></my-header>
-		<my-section></my-section>
-		<my-aside></my-aside>
-	</div>
+    <script src="js/vue.js"></script>
+    <script>
+      var MyHeader = Vue.extend({
+        template: '<header class="header">Hello, Vue!</header>'
+      });
 
-	<script src="js/vue.js"></script>
-	<script>
-
-		var MyHeader = Vue.extend({
-			template: '<header class="header">Hello, Vue!</header>',
-		});
-
-		var MyBlock = Vue.extend({
-			template: '<div class="block">hahaha~</div>',
-		});
-		var MySection = Vue.extend({
-			template: `<section class="section">
+      var MyBlock = Vue.extend({
+        template: '<div class="block">hahaha~</div>'
+      });
+      var MySection = Vue.extend({
+        template: `<section class="section">
 						  <div>Main Section</div>
 						  <my-block></my-block>
 						  <my-block></my-block>
@@ -74,26 +72,26 @@
 						  <my-block></my-block>
 						  <my-block></my-block>
 					   </section>`,
-			components: {
-				MyBlock,
-			},
-		});
-		
-		var MyAside = Vue.extend({
-			template: '<aside class="aside">Aside</aside>',
-		});
-		// Vue.component('my-aside',{template: '<aside class="aside">Aside</aside>'});
+        components: {
+          MyBlock
+        }
+      });
 
-		new Vue({		
-			el: '#app',	
-			components: {
-				MyHeader,
-				MySection,
-				MyAside,
-			},		
-		});
-	</script>
-</body>
+      var MyAside = Vue.extend({
+        template: '<aside class="aside">Aside</aside>'
+      });
+      // Vue.component('my-aside',{template: '<aside class="aside">Aside</aside>'});
+
+      new Vue({
+        el: "#app",
+        components: {
+          MyHeader,
+          MySection,
+          MyAside
+        }
+      });
+    </script>
+  </body>
 </html>
 
 <!-- <my-header></my-header>註冊的元件自訂標籤名稱，要使用該元件，必須要在instance創建前註冊 -->
