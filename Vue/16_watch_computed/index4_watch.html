@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>16_watch_computed</title>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" v-model="x" /> + <input type="text" v-model="y" /> =
+      <input type="text" v-model="z" />
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          x: 0,
+          y: 0,
+          z: 0
+        },
+        watch: {
+          x(val) {
+            this.z = parseInt(val) + parseInt(this.y);
+          },
+          y(val) {
+            this.z = parseInt(this.x) + parseInt(val);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

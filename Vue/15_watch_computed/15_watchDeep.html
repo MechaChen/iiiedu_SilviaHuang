@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue</title>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" v-model="inputValue.a" />
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          inputValue: {
+            a: "",
+            b: 10
+          }
+        },
+        methods: {},
+        computed: {},
+        watch: {
+          //偵(監)聽器，主要是偵測data或computed的變化
+          //宣告成物件
+          inputValue: {
+            handler(val, oldVal) {
+              // console.log(`value : ${oldVal.a} -> ${val.a}`);
+              console.log(val === oldVal);
+            },
+            deep: true //預設不做深層檢查，但如果偵測資料不在同一層就可以改成true
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
