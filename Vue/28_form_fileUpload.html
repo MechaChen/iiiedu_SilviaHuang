@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+      body {
+        font: 30px Tahoma;
+        color: indigo;
+      }
+      select {
+        font: 24px Tahoma;
+        color: #333;
+      }
+    </style>
+    <title>25_form_textInput</title>
+  </head>
+  <body>
+    <div id="app">
+      <input type="file" @change="fileSelected" /><br />
+      <img v-if="imgUrl" :src="imgUrl" alt="image" />
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          imgUrl: ""
+        },
+        methods: {
+          fileSelected(e) {
+            const file = e.target.files.item(0);
+            // console.log(file);
+
+            const readFile = new FileReader();
+            readFile.readAsDataURL(file);
+            readFile.addEventListener("load", this.imageLoaded);
+          },
+          imageLoaded(e) {
+            this.imgUrl = e.target.result;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

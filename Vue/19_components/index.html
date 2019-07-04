@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .clearfix::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      #app {
+        outline: 1px solid #f00;
+        font: 30px Tahoma;
+        width: 1200px;
+        padding-top: 100px;
+        margin: auto;
+      }
+      header {
+        background-color: #aca;
+        padding: 10px;
+      }
+      section {
+        float: left;
+        background-color: #abc;
+        padding: 10px;
+      }
+      aside {
+        float: left;
+        background-color: #aaf;
+        padding: 10px;
+      }
+    </style>
+    <title>19_components</title>
+  </head>
+  <body>
+    <div id="app">
+      <my-header></my-header>
+      <my-section></my-section>
+      <my-aside></my-aside>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script>
+      // Vue.component("my-header", {
+      //   template: '<div class="component">My header component </div>'
+      // });
+
+      const MyHeader = Vue.extend({
+        template: '<header class="header">Hello, Vue!</header>'
+      });
+      const MyBlock = Vue.extend({
+        template: '<div class="block">hahaha~</div>'
+      });
+      const MySection = Vue.extend({
+        template: `<section class="clearfix">
+            <div class="main">Main Section</div>
+            <my-block></my-block>
+            <my-block></my-block>
+            <my-block></my-block>
+            <my-block></my-block>
+            <my-block></my-block>
+          </section>`,
+        components: { MyBlock }
+      });
+      const MyAside = Vue.extend({
+        template: '<aside class="aside clearfix">Aside</aside>'
+      });
+
+      new Vue({
+        el: "#app",
+        components: {
+          MyHeader,
+          MySection,
+          MyAside
+        }
+      });
+    </script>
+  </body>
+</html>
