@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue--文字輸入</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <style>
+      h1 {
+        white-space: pre;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <input type="text" v-model="message"> -->
+      <!-- <input type="text" :value="message"　@input="setMessage"> -->
+
+      <textarea v-model="message"></textarea>
+      <!-- <textarea>{{message}}</textarea> 沒有做雙向綁定-->
+
+      <!-- <h1>{{message}}</h1> -->
+      <!--<pre>{{message}}</pre>  preserve-->
+      <h1>{{ message }}</h1>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          message: ""
+        },
+        methods: {
+          setMessage(e) {
+            this.message = e.target.value;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
+
+<!-- 
+如何用Vue和表單元件綁定?
+文字框可用v-model做雙向綁定
+v-model代表兩樣東西: 
+1. <input type="text" :value="message">
+2. 聆聽input事件@input="setMessage"
+-->

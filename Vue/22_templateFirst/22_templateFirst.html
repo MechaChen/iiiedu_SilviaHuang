@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <style></style>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ message }}</h1>
+      <p>hahaha</p>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          message: "Hello!"
+        },
+        template: '<h3 style="color:red;">{{message}} - {{message}}</h3>'
+      });
+    </script>
+  </body>
+</html>

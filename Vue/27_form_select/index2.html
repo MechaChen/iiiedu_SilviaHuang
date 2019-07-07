@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>27_form_select</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <select v-model="year">
+        <option value="" disabled>Select Year</option>
+        <option>2017</option>
+        <option>2018</option>
+        <option>2019</option>
+      </select>
+      <h1>{{ year }}</h1> -->
+
+      <!-- <select v-model="years" multiple>
+        <option>2017</option>
+        <option>2018</option>
+        <option>2019</option>
+      </select>
+      <h1>{{ years }}</h1> -->
+
+      <!-- <select v-model="selectedYear">
+        <option v-for="year in years">{{ year }}</option>
+      </select>
+      <h1>{{ selectedYear }}</h1> -->
+
+      <select v-model="selectedMonth">
+        <option v-for="month in 12">{{ month }}</option>
+      </select>
+      <h1>{{ selectedMonth }}</h1>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          //   year: "",
+          //   years: [],
+          //   years: [2017, 2018, 2019],
+          //   selectedYear: "",
+          selectedMonth: ""
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Vue--圖片預覽以及上傳</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+	<style></style>
+</head>
+<body>	
+	<div id="app">
+		<!-- <input type="file">   file不能使用v-model -->
+		<input type="file" @change="fileSelected"><br>
+		<!-- <img src="image" width="300"> -->
+		<img v-if="image" :src="image" width="300">
+	</div>
+
+	
+	<script>
+		new Vue({
+			el: '#app',	
+			data: {
+				image: '',
+			},
+			methods:{
+				fileSelected(e){
+					const file = e.target.files.item(0);
+					// console.log(file);
+
+					const readFile = new FileReader();
+					readFile.readAsDataURL(file);
+					readFile.addEventListener('load',this.imageLoaded);
+				},
+				imageLoaded(e){
+					this.image = e.target.result;
+				},
+			},
+		});
+	</script>
+</body>
+</html>

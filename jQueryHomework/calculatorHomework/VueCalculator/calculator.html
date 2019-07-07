@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #ccc;
+        font: 26px Tahoma;
+      }
+      legend {
+        color: #444;
+      }
+      .wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30%;
+        height: 63%;
+        padding: 2%;
+        background-color: #fff;
+      }
+      fieldset {
+        padding: 2%;
+        box-sizing: border-box;
+        background-color: #fff;
+      }
+      .input-field {
+        padding: 1% 0 3% 8%;
+        font-size: 22px;
+      }
+      label,
+      input {
+        display: block;
+      }
+      label {
+        padding-bottom: 8px;
+      }
+      input {
+        padding: 1% 20% 1% 3%;
+        font-size: 16px;
+      }
+    </style>
+    <title>Vue Calculator</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="wrapper">
+        <fieldset>
+          <legend>Vue Calculator</legend>
+          <div class="input-field">
+            <label for="">Quantity:</label>
+            <input type="text" v-model="qty" />
+          </div>
+          <div class="input-field">
+            <label for="">Price Per Unit:</label>
+            <input type="text" v-model="price" />
+          </div>
+          <div class="input-field">
+            <label for="">Tax Rate(%):</label>
+            <input type="text" v-model="tax" />
+          </div>
+          <div class="input-field">
+            <label for="">Discount:</label>
+            <input type="text" v-model="discount" />
+          </div>
+          <div class="input-field">
+            <label for="">Total:</label>
+            <input type="text" v-model="total" v-if="total != NaN" />
+          </div>
+        </fieldset>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script>
+      //   new Vue({
+      //     el: "#app",
+      //     data: {
+      //       qty: 0,
+      //       price: 0,
+      //       tax: 0,
+      //       discount: 0
+      //     },
+      //     computed: {
+      //       total() {
+      //         return this.qty * this.price * (1 + this.tax / 100) - this.discount;
+      //       }
+      //     }
+      //   });
+      new Vue({
+        el: "#app",
+        data: {
+          qty: 0,
+          price: 0,
+          tax: 0,
+          discount: 0,
+          total: 0
+        },
+        watch: {
+          qty(val) {
+            this.total =
+              parseInt(val) *
+                parseInt(this.price) *
+                (1 + parseInt(this.tax) / 100) -
+              parseInt(this.dicount);
+          },
+          price(val) {
+            this.total =
+              parseInt(this.qty) *
+                parseInt(val) *
+                (1 + parseInt(this.tax) / 100) -
+              parseInt(this.dicount);
+          },
+          tax(val) {
+            this.total =
+              parseInt(this.qty) *
+                parseInt(this.price) *
+                (1 + parseInt(val) / 100) -
+              parseInt(this.dicount);
+          },
+          discount(val) {
+            this.total =
+              parseInt(val) *
+                parseInt(this.price) *
+                (1 + parseInt(this.tax) / 100) -
+              parseInt(val);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

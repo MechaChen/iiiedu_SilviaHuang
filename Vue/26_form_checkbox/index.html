@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>26_checkbox</title>
+  </head>
+  <body>
+    <div id="app">
+      <label><input type="checkbox" v-model="agree" />Agree</label>
+      <button @click="submit">Submit</button>
+      <!-- <label
+        ><input type="checkbox" v-model="time" value="morning" />morning</label
+      >
+      <label
+        ><input type="checkbox" v-model="time" value="evening" />evening</label
+      >
+      <label
+        ><input
+          type="checkbox"
+          v-model="time"
+          value="afternoon"
+        />afternoon</label
+      >
+      <h1>{{ time }}</h1> -->
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          agree: false,
+          time: []
+        },
+        methods: {
+          submit() {
+            if (!this.agree) alert("Not agree yet!");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

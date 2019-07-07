@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue</title>
+    <style>
+      #app {
+        font: bold 30px Tahoma;
+      }
+      .component {
+        border: 1px solid #aaa;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{ message }}</p>
+      <my-div></my-div>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+      //registration -- global
+      Vue.component("my-div", {
+        template: '<div class="component">{{message}}</div>',
+
+        data() {
+          return {
+            message: "Hi, Vue from component!"
+          };
+        }
+      });
+
+      new Vue({
+        el: "#app",
+        data: {
+          message: "Hello, Vue from root!"
+        }
+      });
+    </script>
+  </body>
+</html>

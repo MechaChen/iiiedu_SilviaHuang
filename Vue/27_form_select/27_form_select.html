@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Vue--select | option</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+	<style></style>
+</head>
+<body>	
+	<div id="app">
+		<!-- <select v-model="year">
+			<option value="" disabled>Select year</option>
+			<option>2017</option>
+			<option>2018</option>
+			<option>2019</option>
+		</select>
+		<h1>{{year}}</h1> -->
+
+		<!-- <select v-model="years" multiple>
+			<option>2017</option>
+			<option>2018</option>
+			<option>2019</option>
+		</select>
+		<h1>{{years}}</h1> -->
+
+		<!-- <select v-model="selectedYear">
+			<option v-for="year in years">{{year}}</option>
+		</select>
+		<h1>{{selectedYear}}</h1> -->
+
+		<!--
+		<select v-model="selectedYear">
+			<option v-for="year in 2019">{{year}}</option>
+		</select> 
+		--> 
+		<select v-model="selectedMonth">
+			<option v-for="month in 12">{{month}}</option>
+		</select>
+		<!-- <h1>{{selectedMonth}}</h1> -->
+	</div>
+
+	
+	<script>
+		new Vue({
+			el: '#app',	
+			data: {
+				// year: '',
+				// years: [],
+				// years: [2017,2018,2019],
+				// selectedYear: 2017,
+				selectedMonth: 1,
+				
+				// selectedYear: 2006,
+			},
+			methods:{
+				
+			},
+		});
+	</script>
+</body>
+</html>
