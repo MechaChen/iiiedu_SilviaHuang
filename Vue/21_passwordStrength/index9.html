@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+      #app,
+      #app input {
+        font: 24px Tahoma;
+      }
+    </style>
+    <title>21_passwordStrength</title>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" v-model="password" />
+      <p v-if="password">{{ strength }}</p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          password: ""
+        },
+        computed: {
+          strength() {
+            const { password } = this;
+            let score = password.length;
+
+            if (/[a-z]/.test(password)) score *= 2.0;
+            if (/[A-Z]/.test(password)) score *= 1.5;
+            if (/[0-9]/.test(password)) score *= 1.2;
+            if (/[^a-zA-Z0-9]/.test(password)) score *= 1.5;
+
+            if (score >= 30) return "Perfect";
+            else if (score >= 15) return "Great";
+            else if (score >= 8) return "Good";
+            else return "Weak";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

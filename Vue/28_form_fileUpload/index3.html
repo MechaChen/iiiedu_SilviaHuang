@@ -4,22 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <style>
-      body {
-        font: 30px Tahoma;
-        color: indigo;
-      }
-      select {
-        font: 24px Tahoma;
-        color: #333;
-      }
-    </style>
-    <title>25_form_textInput</title>
+    <title>28_form_fileUpload</title>
   </head>
   <body>
     <div id="app">
       <input type="file" @change="fileSelected" /><br />
-      <img v-if="imgUrl" :src="imgUrl" alt="image" />
+      <img :src="imgUrl" />
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
     <script>
@@ -30,12 +20,10 @@
         },
         methods: {
           fileSelected(e) {
-            const file = e.target.files.item(0);
-            // console.log(file);
-
-            const readFile = new FileReader();
-            readFile.readAsDataURL(file);
-            readFile.addEventListener("load", this.imageLoaded);
+            const file = e.target.files[0];
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.addEventListener("load", this.imageLoaded);
           },
           imageLoaded(e) {
             this.imgUrl = e.target.result;

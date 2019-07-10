@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>31_v-for_notice</title>
+    <style>
+      h1 {
+        display: inline-block;
+        font: 30px Tahoma;
+        color: #555;
+        background-color: #eee;
+        font-weight: 700;
+      }
+      span {
+        font: 24px Tahoma;
+        color: #fa7979;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <template v-for="(header, index) in headers">
+        <span>{{ index + 1 }}</span>
+        <h1>{{ header }}</h1>
+        <img
+          src="https://media3.giphy.com/media/4Ztytt2s2Cr7XyTI1z/source.gif"
+          alt="Capoo"
+        />
+        <hr />
+      </template>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          headers: ["Products", "Private Policy", "About us"]
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>jQuery</title>
+  </head>
+  <body>
+    <div id="app">
+      Your Name:
+      <input type="text" id="name" v-model="name" @keyup.13="appendName" />
+      <button id="submitButton" @click="appendName">Submit</button>
+
+      <p id="feedback"></p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script>
+      // $(document).ready(function() {
+      //   $("#submitButton").click(function() {
+      //     const val = $(":text").val();
+      //     $("#feedback").append(val);
+      //     $(":text").val("");
+      //   });
+      // });
+      new Vue({
+        el: "#app",
+        data: {
+          name: ""
+        },
+        methods: {
+          appendName() {
+            $("#feedback").append(`${this.name}<br>`);
+            this.name = "";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

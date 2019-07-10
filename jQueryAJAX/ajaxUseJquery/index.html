@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ajaxUseJquery</title>
+  </head>
+  <body>
+    <button id="loadBtn">load</button>
+    <button id="getBtn">get</button>
+    <button id="postBtn">post</button>
+    <button id="getJSONBtn">getJSON</button>
+    <button id="ajaxBtn">ajax</button>
+
+    <p id="feedback"></p>
+
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script>
+      function init() {
+        //   1. Load
+        $("#loadBtn").click(function() {
+          $("#feedback").load("../php/useParameter.php", {
+            name: "Anan",
+            age: 15
+          });
+        });
+        // 2. GET
+        $("#getBtn").click(function() {
+          $.get("../php/useParameter.php", { name: "Benson", age: 17 }, data =>
+            $("#feedback").text(data)
+          );
+        });
+        // 3. POST
+        $("#postBtn").click(() => {
+          $.post("../php/useParameter.php", { name: "Cindy", age: 19 }, data =>
+            $("#feedback").text(data)
+          );
+        });
+        // 4. getJSON
+        $("#getJSONBtn").click(() => {
+          $.getJSON("../JSON_XML_CSV/animal.json", data =>
+            $("#feedback").text(`${data[0].Variety}, ${data[0].Reason}`)
+          );
+        });
+        // 5. AJAX
+        $("#ajaxBtn").click(() => {
+          $.ajax({
+            url: "../php/useParameter.php",
+            data: {
+              name: "Diva",
+              age: 21
+            },
+            type: "GET",
+            success(data) {
+              $("#feedback").text(data);
+            }
+          });
+        });
+      }
+
+      $(document).ready(init);
+    </script>
+  </body>
+</html>

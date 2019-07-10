@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSV to Table using Ajax</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#ajaxButton").click(function() {
+          $.ajax({
+            url: "JSON_XML_CSV/employee.csv",
+            dataType: "text",
+            success: function(data) {
+              var employeeData = data.split(/\n|\r\n/); //match on \n or \r\n
+              // var employeeData = data.split(/\r?\n|\r/); //match on \n or \r\n
+
+              tableData = '<table class="table table-bordered table-striped">';
+              for (var rows = 0; rows < employeeData.length; rows++) {
+                var cellData = employeeData[rows].split(",");
+
+                tableData += "<tr>";
+
+                for (var cols = 0; cols < cellData.length; cols++) {
+                  if (rows == 0) {
+                    tableData += "<th>" + cellData[cols] + "</th>";
+                  } else {
+                    tableData += "<td>" + cellData[cols] + "</td>";
+                  }
+                }
+
+                tableData += "</tr>";
+              }
+              tableData += "</table>";
+
+              $("#feedback").append(tableData);
+            }
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h2 align="center">CSV to Table using Ajax</h2>
+    <div id="box" align="center">
+      <button id="ajaxButton" class="btn btn-info">Load Data</button>
+    </div>
+    <p id="feedback" align="center"></p>
+  </body>
+</html>

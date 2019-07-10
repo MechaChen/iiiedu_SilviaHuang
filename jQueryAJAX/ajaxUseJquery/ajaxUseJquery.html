@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ajax using jQuery</title>
+  </head>
+  <body>
+    <div id="box">
+      <button id="loadButton">Load</button>
+      <button id="getButton">Get</button>
+      <button id="postButton">Post</button>
+      <button id="getJSONButton">getJSON</button>
+      <button id="ajaxButton">AJAX</button>
+
+      <p id="feedback"></p>
+    </div>
+  </body>
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <script>
+        $(document).ready(function() {
+          // 1. $().load
+          $("#loadButton").click(function() {
+            // $('#feedback').load('removeImage.html');
+            // $('#feedback').load('php/data.php');
+            $("#feedback").load("../php/useParameter.php", {
+              name: "Anan",
+              age: 15
+            });
+          });
+          // 2. $.get()
+          $("#getButton").click(function() {
+            $.get("../php/useParameter.php", { name: "Anan", age: 15 }, function(
+              data
+            ) {
+              $("#feedback").html(`<h2>${data}</h2>`);
+            });
+          });
+          // 3. $.post()
+          $("#postButton").click(function() {
+            $.post("../php/useParameter.php", { name: "Anan", age: 15 }, function(
+              data
+            ) {
+              $("#feedback").html(`<h2>${data}</h2>`);
+            });
+          });
+          // 4. $.getJSON()
+          $("#getJSONButton").click(function() {
+            $.getJSON("../JSON_XML_CSV/animal.json", function(data) {
+              $("#feedback").html("<h2>" + data[0].Reason + "</h2>");
+    sdf      });
+          // 5. $.ajax()
+          $("#ajaxButton").click(function() {
+            $.ajax({
+              url: "../php/useParameter.php",
+              data: { name: "Anan", age: 15 },
+              type: "GET",
+              success: function(data) {
+                $("#feedback").html(`<h2>${data}</h2>`);
+
+              }
+            });
+          });
+
+          // $.ajax();
+          // $.ajax({});
+          // $.ajax({
+          // 	url:'',
+          // 	data: ,		//傳送到server端的資料，會自動轉成jQuery的字串型式
+          // 	type: ,		//GET或POST
+          // 	dataType: , //預期server端會回傳的資料型態
+          //xml/html/json/jsonp/text/script
+          // 	success: function(){},
+          // 	success(){},
+          // 	error: function(){},
+          // 	complete: function(){},
+          // });
+        });
+  </script>
+</html>

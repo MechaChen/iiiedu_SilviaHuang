@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>13_bind_on</title>
+  </head>
+  <body>
+    <p>Ann Hathway</p>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script>
+      // widthout Bind
+      //   $("p")
+      //     .mouseenter(function() {
+      //       $(this).addClass("highlight");
+      //     })
+      //     .mouseleave(function() {
+      //       $(this).removeClass("highlight");
+      //     });
+
+      // Bind 1st kind
+      //   $("p")
+      //     .bind("mouseenter", function() {
+      //       $(this).addClass("highlight");
+      //     })
+      //     .bind("mouseleaven", function() {
+      //       $(this).removeClass("highlight");
+      //     });
+
+      // Bind 2nd kind
+      //   $("p").bind("mouseenter mouseleave", function() {
+      //     $(this).toggleClass("highlight");
+      //   });
+
+      // $(document).on(events, selector, call back fn)
+      $(document).on("mouseenter mouseleave", "p", function() {
+        $(this).toggleClass("highlight");
+      });
+    </script>
+  </body>
+</html>

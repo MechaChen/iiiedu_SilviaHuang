@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSON to Unordered List using Ajax</title>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#ajaxButton").click(function() {
+          $.ajax({
+            url: "../JSON_XML_CSV/music.json",
+            dataType: "json",
+            success: function(data) {
+              var musicData = "<ul>";
+              // for(var i=0; i<data.length; i++){
+              // 	musicData += `<li>${data[i].optionValue}</li>`;
+              // }
+
+              $.each(data, function(i, n) {
+                //i:代表data內的index值
+                //n:代表index的內容
+                // console.log(i);
+                musicData += "<li>" + n["optionValue"] + "</li>";
+              });
+              musicData += "</ul>";
+
+              $("#feedback").append(musicData);
+            }
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h2>JSON to Unordered List using Ajax</h2>
+    <div id="box">
+      <button id="ajaxButton">Load Data</button>
+    </div>
+    <p id="feedback"></p>
+  </body>
+</html>

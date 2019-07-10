@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -52,3 +53,44 @@
     </script>
   </body>
 </html>
+=======
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue--checkbox</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <style></style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <input type="checkbox" v-model="agree"><label>Agree</label>		
+		<h1>{{agree}}</h1>
+		<button @click="submit">Submit</button> -->
+
+      <input type="checkbox" value="morning" v-model="time" /><label
+        >Morning</label
+      >
+      <input type="checkbox" value="afternoon" v-model="time" /><label
+        >Afternoon</label
+      >
+      <input type="checkbox" value="evening" v-model="time" /><label
+        >Evening</label
+      >
+
+      <h1>{{ time }}</h1>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          // agree: false,
+          time: []
+        },
+        methods: {}
+      });
+    </script>
+  </body>
+</html>
+>>>>>>> 56ef69500a2763d6c599b73cab1d0bd969098997

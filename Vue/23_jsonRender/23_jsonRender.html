@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -102,3 +103,77 @@
     </script>
   </body>
 </html>
+=======
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <style>
+      body,
+      html {
+        font-family: Arial, Tahoma, Verdana;
+      }
+      h1 {
+        font-size: 14px;
+      }
+      a {
+        color: #366;
+        text-decoration: none;
+      }
+      .author {
+        font-size: 10px;
+      }
+      .book {
+        display: inline-block;
+        width: 200px;
+        border: 1px solid gray;
+        border-radius: 10px;
+        margin: 12px;
+        padding: 10px;
+
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+      }
+      .image {
+        width: 100%;
+        height: 250px;
+        background-size: cover;
+        background-position: center center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div v-for="book in books" class="book">
+        <img :src="book.image" width="180" class="image" />
+        <a :href="book.url">
+          <h1>{{ book.title }}</h1>
+        </a>
+        <span class="author">{{ book.author }}</span>
+      </div>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          books: []
+        },
+        methods: {},
+        mounted() {
+          //1.用原生的fetch去取得JSON檔，再使用promise的then()取得response
+          // fetch('bookData.json').then(res => res.json()).then(books => this.books = books)
+          //2.jQuery
+          // $.getJSON('bookData.json').then(books => this.books = books);
+
+          //3.Axios
+          axios.get("../bookData.json").then(res => (this.books = res.data));
+        }
+      });
+    </script>
+  </body>
+</html>
+>>>>>>> 56ef69500a2763d6c599b73cab1d0bd969098997

@@ -1,0 +1,22 @@
+*{
+	/*margin: 0px;
+	padding: 0px;
+	list-style: none;*/
+}
+body{
+	background: #ccc;
+	font: 110% Tahoma,Verdana,Arial;
+}
+#theForm{
+	background: #fff;
+	width:200px;
+	margin: 50px;
+	padding: 15px;
+	border: 1px solid #ddd;
+}
+fieldset div{
+	margin-bottom: 10px;
+}
+label,legend,input{
+	text-transform: capitalize;
+}

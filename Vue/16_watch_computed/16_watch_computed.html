@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Vue</title>
+</head>
+<body>	
+	<div id="app">
+		<input v-model="x"> + 
+		<input v-model="y"> = 
+		<input v-model="z">
+	</div>
+
+	<script src="js/vue.js"></script>
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				x: 0,
+				y: 0,
+				// z: 0,
+			},
+			methods:{},
+			computed:{
+				z(){
+					return parseInt(this.x) + parseInt(this.y);
+				}
+			},
+			watch:{
+				// x(val){
+				// 	this.z = parseInt(val) + parseInt(this.y);
+				// },
+				// y(val){
+				// 	this.z = parseInt(this.x) + parseInt(val);
+				// },
+			},
+		});
+	</script>
+</body>
+</html>
