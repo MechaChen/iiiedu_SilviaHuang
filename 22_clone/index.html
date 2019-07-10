@@ -7,7 +7,7 @@
     <script>
       $(document).ready(() => {
         $("#submitButton").click(function() {
-          $("span")
+          $("#origin")
             .clone()
             .appendTo("#feedback");
         });
@@ -19,7 +19,7 @@
     <p>
       <button id="submitButton">Submit</button>
     </p>
-    <span>Silvia</span>
+    <span id="origin">Silvia</span>
     <p id="feedback">My name is:</p>
   </body>
 </html>

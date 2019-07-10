@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>XML to Ordered List using Ajax</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#ajaxButton").click(function() {
+          $.ajax({
+            url: "JSON_XML_CSV/books.xml",
+            dataType: "xml",
+            success: function(data) {
+              var bookData = "<ol>";
+
+              $(data)
+                .find("Book")
+                .each(function() {
+                  var bTitle = $(this)
+                    .find("Title")
+                    .text();
+                  var bPublisher = $(this)
+                    .find("Publisher")
+                    .text();
+                  bookData += `<li>${bTitle}, ${bPublisher}</li>`;
+                });
+
+              bookData += "</ol>";
+
+              $("#feedback").append(bookData);
+            }
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h2>XML to Ordered List using Ajax</h2>
+    <div id="box">
+      <button id="ajaxButton">Load Data</button>
+    </div>
+    <p id="feedback"></p>
+  </body>
+</html>

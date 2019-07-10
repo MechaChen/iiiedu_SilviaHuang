@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>13_bind_on(Vue version)</title>
+  </head>
+  <body>
+    <div id="app">
+      <p @mouseenter:mouseleave="highlight">Ann Hathway</p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        methods: {
+          highlight(e) {
+            console.log(e);
+            $(e.target).toggleClass("highlight");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
