@@ -79,57 +79,18 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
     <script>
-      //   new Vue({
-      //     el: "#app",
-      //     data: {
-      //       qty: 0,
-      //       price: 0,
-      //       tax: 0,
-      //       discount: 0
-      //     },
-      //     computed: {
-      //       total() {
-      //         return this.qty * this.price * (1 + this.tax / 100) - this.discount;
-      //       }
-      //     }
-      //   });
       new Vue({
         el: "#app",
         data: {
           qty: 0,
           price: 0,
           tax: 0,
-          discount: 0,
-          total: 0
+          discount: 0
         },
-        watch: {
-          qty(val) {
-            this.total =
-              parseInt(val) *
-                parseInt(this.price) *
-                (1 + parseInt(this.tax) / 100) -
-              parseInt(this.dicount);
-          },
-          price(val) {
-            this.total =
-              parseInt(this.qty) *
-                parseInt(val) *
-                (1 + parseInt(this.tax) / 100) -
-              parseInt(this.dicount);
-          },
-          tax(val) {
-            this.total =
-              parseInt(this.qty) *
-                parseInt(this.price) *
-                (1 + parseInt(val) / 100) -
-              parseInt(this.dicount);
-          },
-          discount(val) {
-            this.total =
-              parseInt(val) *
-                parseInt(this.price) *
-                (1 + parseInt(this.tax) / 100) -
-              parseInt(val);
+        computed: {
+          total() {
+            const { qty, price, tax, discount } = this;
+            return (qty * price * tax) / 100 - discount;
           }
         }
       });
