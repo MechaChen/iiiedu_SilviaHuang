@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>31_v-for_notice</title>
+    <style>
+      body {
+        font: 24px Tahoma;
+        color: #444;
+        background-color: #eee;
+      }
+      button {
+        -webkit-appearance: none;
+        border: none;
+        width: 80px;
+        height: 40px;
+        padding: 10px 5px;
+        margin: 5px 0;
+        border: 2px solid #fff;
+        box-sizing: border-box;
+        background-color: #fa7979;
+        color: #fff;
+        border-radius: 20px;
+        position: relative;
+        top: -3px;
+        left: -3px;
+        box-shadow: 3px 3px #e7867e;
+        transition: 0.3s;
+      }
+      button:hover {
+        top: 0;
+        left: 0;
+        box-shadow: 0 0 transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <button @click="reverse">Reverse</button>
+      <button @click="even">Even</button>
+      <button @click="all">All</button>
+      <button @click="origin">Origin</button>
+      <button @click="sort">Sort</button>
+      <ul>
+        <li v-for="num in nums">{{ num }}</li>
+      </ul>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script>
+      const nums = [5, 4, 6, 1, 8, 2, 7, 9, 3];
+      new Vue({
+        el: "#app",
+        data: {
+          nums
+        },
+        methods: {
+          reverse() {
+            this.nums.reverse();
+          },
+          even() {
+            this.nums = this.nums.filter(num => num % 2 === 0);
+          },
+          all() {
+            this.nums = nums;
+          },
+          origin() {
+            this.nums = nums;
+          },
+          sort() {
+            this.nums = nums.slice().sort();
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>31_v-for_notice</title>
+    <style>
+      body {
+        font: 24px Tahoma;
+        color: #444;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <button @click="action">Click</button>
+      <ul>
+        <!-- <li v-for="num in nums">{{ num }}</li> -->
+        <li v-for="(value, key) in nums">{{ key }} : {{ value }}</li>
+      </ul>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          // nums: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+          nums: {
+            x: 5,
+            y: 10
+          }
+        },
+        methods: {
+          action() {
+            // 加入數字
+            // this.nums.push(this.nums.length + 1);
+            // this.nums.unshift(0);
+
+            // 移除數字
+            // this.nums.pop();
+            // this.nums.shift();
+
+            // 在特定位置
+            // this.nums.splice(3, 1);
+            // this.nums.splice(3, 1, 9, 10, 11);
+
+            // 排序
+            // this.nums.sort();
+            // this.nums.reverse();
+
+            // Function Programing
+            // this.nums = this.nums.filter(num => num % 2 === 0);
+
+            // this.nums.length = 0;
+            // splice() 改變原陣列
+            // this.nums.splice(0);
+            // slice()  回傳一局部複製
+            // this.nums = this.nums.slice(this.nums.length);
+
+            // this.nums.z = 15;
+            this.$set(this.nums, "z", 15);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

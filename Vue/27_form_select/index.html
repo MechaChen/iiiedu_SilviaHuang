@@ -4,11 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<<<<<<< HEAD
+    <style>
+      body,
+      select {
+        font: 24px Tahoma;
+        color: indigo;
+      }
+      select {
+        padding: 5px 10px;
+      }
+    </style>
+=======
+>>>>>>> 56ef69500a2763d6c599b73cab1d0bd969098997
     <title>27_form_select</title>
   </head>
   <body>
     <div id="app">
       <!-- <select v-model="year">
+<<<<<<< HEAD
+        <option value="">Selct Year</option>
+        <option></option>
+        <option></option>
+        <option></option>
+      </select> -->
+      <select v-model="selectedYear">
+        <option v-for="year in years">{{ year }}</option>
+      </select>
+      <h1>{{ selectedYear }}</h1>
+=======
         <option value="" disabled>Select year</option>
         <option>2017</option>
         <option>2018</option>
@@ -32,17 +56,23 @@
         <option v-for="month in 12">{{ month }}</option>
       </select>
       <h1>{{ selectedMonth }}</h1>
+>>>>>>> 56ef69500a2763d6c599b73cab1d0bd969098997
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
     <script>
       new Vue({
         el: "#app",
         data: {
+<<<<<<< HEAD
+          years: [2017, 2018, 2019],
+          selectedYear: ""
+=======
           //   year: "",
           //   years: [],
           years: [2017, 2018, 2019],
           selectedYear: "",
           selectedMonth: ""
+>>>>>>> 56ef69500a2763d6c599b73cab1d0bd969098997
         }
       });
     </script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue--圖片預覽以及上傳</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <style></style>
+  </head>
+  <body>
+    <div id="app">
+      <select>
+        <option v-for="(month, index) in months" :value="index + 1">{{
+          month
+        }}</option>
+      </select>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          months: [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec"
+          ],
+          todoList: [
+            "PHP考試",
+            "HTML5考試",
+            "學好Javascript",
+            "專題",
+            "百萬年薪"
+          ]
+        },
+        methods: {}
+      });
+    </script>
+  </body>
+</html>

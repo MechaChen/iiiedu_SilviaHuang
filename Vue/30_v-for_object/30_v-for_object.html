@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>30_v-for_object</title>
+    <style>
+      body {
+        font: 24px Tahoma;
+        color: #444;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <div v-for="(value, key) in me">{{ key }} : {{ value }}</div> -->
+      <div v-for="item in me">{{ item.prop }} : {{ item.value }}</div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          //   me: {
+          //     name: "陳敬岳",
+          //     age: 19,
+          //     id: "Benson",
+          //     password: "12345",
+          //     10: "還在念小學",
+          //     15: "不知道在幹嘛",
+          //     18: "不要再問了"
+          //   }
+
+          //   讓物件照順序排列
+          me: [
+            { prop: "name", value: "陳敬岳" },
+            { prop: "age", value: 19 },
+            { prop: "id", value: "Benson" },
+            { prop: "password", value: "12345" },
+            { prop: 10, value: "還在念小學" },
+            { prop: 15, value: "不知道在幹嘛" },
+            { prop: 18, value: "不要再問了" }
+          ]
+        }
+      });
+    </script>
+  </body>
+</html>

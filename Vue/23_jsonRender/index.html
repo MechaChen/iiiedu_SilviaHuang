@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>23_jsonRender</title>
+<<<<<<< HEAD
+  </head>
+  <body>
+    <div id="app">
+      <div v-for="book in books">
+        <img :src="book.image" :alt="book.title" />
+        <a :href="book.url">
+          <h1>{{ book.title }}</h1>
+        </a>
+        <span>{{ book.author }}</span>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+=======
     <style>
       body,
       html {
@@ -51,6 +65,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+>>>>>>> 56ef69500a2763d6c599b73cab1d0bd969098997
     <script>
       new Vue({
         el: "#app",
@@ -58,6 +73,11 @@
           books: []
         },
         mounted() {
+<<<<<<< HEAD
+          fetch("../bookData.json")
+            .then(res => res.json())
+            .then(books => (this.books = books));
+=======
           // 1. fetch API
           //   fetch("../bookData.json")
           //     .then(res => res.json())
@@ -66,6 +86,7 @@
           //   $.getJSON("../bookData.json").then(books => (this.books = books));
           // 3. Axios
           axios.get("../bookData.json").then(res => (this.books = res.data));
+>>>>>>> 56ef69500a2763d6c599b73cab1d0bd969098997
         }
       });
     </script>
