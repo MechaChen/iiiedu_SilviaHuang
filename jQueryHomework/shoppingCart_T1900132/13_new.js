@@ -71,7 +71,14 @@ function createCartList(itemKey, itemValue) {
 
   trItemList.appendChild(tdPrice);
 
-  //建立商品數量--第四個td
+  //建立商品小總和--第四個td
+  var tdSubtotal = document.createElement("td");
+  tdSubtotal.style.width = "170px";
+  tdSubtotal.innerText = itemPrice * 1;
+
+  trItemList.appendChild(tdSubtotal);
+
+  //建立商品數量--第五個td
   var tdItemCount = document.createElement("td");
   tdItemCount.style.width = "60px";
 
@@ -103,7 +110,27 @@ function deleteItem() {
   this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
 }
 
-function changeItemCount() {
+function changeItemCount(e) {
   //作業的一部分
+  // 取得數量
+  const { value: count } = e.target;
+  // 取得小總和
+  let { innerText: subTotal } = e.target.parentNode.previousSibling;
+  // 取得單價
+  let {
+    innerText: price
+  } = e.target.parentNode.previousSibling.previousSibling;
+  subTotal = count * price;
+  e.target.parentNode.previousSibling.innerText = subTotal;
+
+  // 重新計算總價
+  // 取得每個小總和
+  const sub = document.querySelectorAll(".item td:nth-child(4)");
+  let newTotal = 0;
+  for (let i = 0; i < sub.length; i++) {
+    console.log(sub[i].innerText);
+    newTotal += parseInt(sub[i].innerText);
+  }
+  document.getElementById("total").innerText = newTotal;
 }
 window.addEventListener("load", doFirst);

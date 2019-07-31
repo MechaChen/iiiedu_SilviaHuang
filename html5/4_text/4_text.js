@@ -7,6 +7,8 @@ function init() {
   context.font = "600 60px Tahoma";
   // context.fillText("omgSilvia", 100, 100);
   context.strokeText("godSilvia", 100, 100);
+  context.fillStyle = "#abc";
+  context.fillText("godSilvia", 200, 100);
 
   context.moveTo(100, 100);
   context.lineTo(500, 100);

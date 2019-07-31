@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSV to Table using Ajax</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <style>
+      #feedback {
+        width: 90%;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h2 align="center">CSV to Table using Ajax</h2>
+      <div id="box" align="center">
+        <button @click="getCSVdata" id="ajaxButton" class="btn btn-warning">
+          Load Data
+        </button>
+      </div>
+      <div id="feedback" align="center">
+        <table class="table table-bordered table-striped">
+          <tr>
+            <th v-for="th in theads">{{ th }}</th>
+          </tr>
+          <tr v-for="td in tdata" v-if="td.length > 0">
+            <td>{{ td[0] }}</td>
+            <td>{{ td[1] }}</td>
+            <td>{{ td[2] }}</td>
+            <td>{{ td[3] }}</td>
+            <td>{{ td[4] }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          theads: [],
+          tdata: []
+        },
+        methods: {
+          getCSVdata() {
+            $.ajax({
+              url: "employee.csv",
+              dataType: "text",
+              success: data => {
+                const employeeData = data.split(/\n|\r\n/);
+                for (let rows = 0; rows < employeeData.length; rows++) {
+                  const cellData = employeeData[rows].split(",");
+                  const newMem = [];
+                  for (let cols = 0; cols < cellData.length; cols++) {
+                    if (rows == 0) {
+                      this.theads.push(cellData[cols]);
+                    } else {
+                      newMem.push(cellData[cols]);
+                    }
+                  }
+                  this.tdata.push(newMem);
+                }
+              }
+            });
+            $("#ajaxButton").attr("disabled", true);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

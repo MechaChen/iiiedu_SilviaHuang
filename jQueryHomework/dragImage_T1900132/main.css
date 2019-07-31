@@ -1,0 +1,53 @@
+* {
+  /* outline: 1px solid #f00; */
+}
+
+.leftBox {
+  outline: 2px solid #abc;
+  float: left;
+  width: 400px;
+  height: 600px;
+  margin-left: 100px;
+}
+
+.rightBox {
+  float: left;
+  margin-left: 100px;
+}
+
+#dragZone {
+  outline: 2px solid #faa;
+  position: relative;
+  width: 400px;
+  height: 600px;
+  overflow: auto;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 2%;
+}
+
+i {
+  cursor: pointer;
+  font-size: 30px;
+  transition: 0.3s;
+}
+
+i:hover {
+  color: orangered;
+}
+
+.focus {
+  box-shadow: 0 0 10px #66f;
+}
+
+p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #555;
+  font: 20px Tahoma;
+}

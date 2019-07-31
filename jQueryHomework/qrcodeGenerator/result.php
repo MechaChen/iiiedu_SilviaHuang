@@ -5,22 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <style>
-    * {
-        margin: 0;
-        padding: 0;
-    }
+        h3 {
+            font: 24px Tahoma;
+            font-weight: 500;
+        }
     </style>
-    <title>Index</title>
+    <title>QRcode Generator</title>
 </head>
 <body>
     <?php
-        echo "使用者: ", $_GET["source"], "<br>"; 
-        echo uniqid();
+        $source = $_GET["source"];
     ?>
-    
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <h3><?php echo $source . $rand; ?></h3>
+    <div id="source"></div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script src="jquery.qrcode.min.js"></script>
     <script>
-    
+        $("#source").qrcode({
+            text: "<?php echo $_GET["source"]; ?>",
+            width: 150,
+            height: 150
+        }
+      );
     </script>
 </body>
 </html>

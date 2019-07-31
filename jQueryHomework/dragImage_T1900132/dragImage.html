@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <title>Drag Image</title>
+  </head>
+  <body>
+    <div class="leftBox">
+      <div class="imgs">
+        <img src="bluecar.gif" alt="" />
+        <img src="dino.gif" alt="" />
+        <img src="punk.gif" alt="" />
+        <img src="orbit.gif" alt="" />
+      </div>
+    </div>
+    <div class="rightBox">
+      <div id="dragZone">
+        <p>
+          1.拉左邊的圖片到這裡<br />
+          2.點擊此處的圖片來進行操作
+        </p>
+      </div>
+      <div class="controls">
+        <i id="rotate" class="fas fa-sync-alt"></i>
+        <i id="zoomIn" class="fas fa-search-plus"></i>
+        <i id="trash" class="fas fa-trash-alt"></i>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="new.js"></script>
+  </body>
+</html>

@@ -27,6 +27,14 @@ function init() {
   context.lineWidth = 3;
   context.strokeStyle = "black";
   context.stroke();
+
+  context.beginPath();
+  context.moveTo(300, 300);
+  context.lineTo(400, 150);
+  context.lineTo(550, 400);
+  context.strokeStyle = "#abc";
+  context.lineWidth = 2;
+  context.stroke();
 }
 
 window.addEventListener("load", init);

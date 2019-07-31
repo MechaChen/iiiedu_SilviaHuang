@@ -4,11 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Playing Video</title>
+    <title>Face</title>
+    <style>
+      canvas {
+        outline: 1px solid #f00;
+      }
+    </style>
   </head>
   <body>
-    <video controls poster="https://placedog.net/640/360?random">
-      <source src="movies/videoplayback.mp4" />
-    </video>
+    <canvas id="canvas"></canvas>
+    <script src="face.js"></script>
   </body>
 </html>
